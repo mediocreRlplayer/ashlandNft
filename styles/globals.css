@@ -2,8 +2,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  background-color: #E0E0C9;
+  font-family: Georgia, 'Times New Roman', Times, serif !important;
+  background-color: #E0E0C9 !important;
 }
 
 a {
@@ -13,6 +13,17 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+label{
+  font-size: .7rem;
+  text-align: left;
+}
+
+input{
+  padding: 5px 10px;
+  border: 1px solid #162234;
+  border-radius: 5px;
 }
 
 

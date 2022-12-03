@@ -1,15 +1,17 @@
+import React, {useState} from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import AshNft from '../AshNft'
-import Nft from '../Nft'
-import Benefits from '../Benefits'
-import peach from '../Peach.png'
-import blueberry from '../Blueberry.png'
-import strawberry from '../Strawberry.png'
-import lemonade from '../Lemonade.png'
+import AshNft from '../components/AshNft'
+import Nft from '../components/Nft'
+import Benefits from '../components/Benefits'
+import peach from '../assets/Peach.png'
+import blueberry from '../assets/Blueberry.png'
+import strawberry from '../assets/Strawberry.png'
+import lemonade from '../assets/Lemonade.png'
 
 export default function Home() {
+
   return (
     <div className={styles.container}>
       <Head>
@@ -19,13 +21,14 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-      <div>
+      
+      <div className={styles.topPics}>
       <Image src={peach}></Image>
       <Image src={lemonade}></Image>
       </div>
        <AshNft />
        <Image src={blueberry}></Image>
-       <Nft />
+       <Nft/>
        <Image src={strawberry}></Image>
        <Benefits />
       </main>
