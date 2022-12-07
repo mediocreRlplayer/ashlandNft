@@ -22,14 +22,16 @@ export default function Home() {
 
       <main className={styles.main}>
       
-      <div className={styles.topPics}>
-      <Image src={peach}></Image>
-      <Image src={lemonade}></Image>
-      </div>
+      <div className={styles.poly}>  
        <AshNft />
-       <Image src={blueberry}></Image>
+      </div>
        <Nft/>
+       <div className={styles.images}>
        <Image src={strawberry}></Image>
+       <Image src={blueberry}></Image>
+       <Image src={peach}></Image>
+       <Image src={lemonade}></Image>
+       </div>
        <Benefits />
       </main>
 

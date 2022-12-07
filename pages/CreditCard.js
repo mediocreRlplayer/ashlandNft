@@ -5,9 +5,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import UserInput from '../components/UserInput'
 import Credit from '../components/Credit'
+import Crypto from '../components/Crypto'
+import Modal from 'react-bootstrap/Modal'
 
 function CreditCard() {
-  const [user, setUser] = useState(false)
+  const [user, setUser] = useState({ user: true, crypto: false, cc: false })
+  const [show, setShow] = useState(false)
   return (
     <div className={styles.creditPage}>
       <div className={styles.leftCheckout}>
@@ -24,16 +27,44 @@ function CreditCard() {
         <Image src={design} />
       </div>
       <div className={styles.rightCheckout}>
-        {(user) ?
+        <Modal show={show}>
+          <Modal.Header closeButton onClick={() => setShow(false)}>
+            <Modal.Title>At Ashland you have a choice of how to pay</Modal.Title>
+          </Modal.Header>
+          <Modal.Body></Modal.Body>
+          <Modal.Footer>
+            <button className={styles.btn} onClick={() => {
+              setShow(false)
+              setUser({ user: false, cc: true })
+            }
+            }>
+              Buy with Credit Card
+            </button>
+            <button className={styles.btn} onClick={() => {
+              setShow(false)
+              setUser({ user: false, crypto: true })
+            }
+            }>            Buy with Crypto
+            </button>
+          </Modal.Footer>
+        </Modal>
+        {(user.user) ?
           <>
             <UserInput />
-            <button className={styles.btn} onClick={() => setUser(false)}>Continue to checkout</button>
+            <button className={styles.btn} onClick={() => setShow(true)}>Continue to checkout</button>
           </>
           :
-          <>
-            <Credit />
-            <button className={styles.btn} onClick={() => setUser(true)}>Pay</button>
-          </>
+          (user.crypto) ?
+            <>
+              <Crypto />
+              <button className={styles.btn} onClick={() => setUser({user: true, crypto: false})}>Pay</button>
+
+            </>
+            :
+            <>
+              <Credit />
+              <button className={styles.btn} onClick={() => setUser({user: true, cc: false})}>Pay</button>
+            </>
         }
       </div>
     </div>

@@ -16,7 +16,8 @@ function AshNft() {
           <p style={{fontSize: '1.3rem'}}>Now you can be a part of our family with our digital collection</p>
         </div>
       </div>
-
+      {/* <div className={styles.waves2}></div>
+      <div className={styles.waves}></div> */}
     </div>
   )
 }

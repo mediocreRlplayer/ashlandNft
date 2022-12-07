@@ -5,18 +5,41 @@
 } */
 .ashAbout{
   font-size: 1.8rem;
-  width: 40%;
+  text-align: center;
+  margin: 0 20%;
 }
 
 .ashMembers{
-  background-color: #E1A5A7;
+  background-color:rgba(224, 163, 165, .3);
   color: #162234;
+  position: relative;
+}
+
+.benefits{
+  background: url('../assets/blob.svg');
+  width: 100%;
+  aspect-ratio: 960/540;
+  background-size: cover;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+}
+.benefitsContent{
+  height: 50vh;
+  padding: 2rem 0;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  background-color: rgba(22, 34, 52, .5);
+  color:#e0e0c9;
   text-align: center;
 }
 
 .creditPage{
+  background: url('../assets/fullwavecheckout.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  aspect-ratio: 960/540;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -35,7 +58,9 @@
 }
 
 .leftCheckout{
+  text-align: center;
   max-width: 50%;
+  padding: 100px;
   border-right: 5px solid #162234;
 }
 
@@ -49,12 +74,21 @@
   width: 100%;
 }
 
-.btn:hover {
+.btn:hover, .buyBtn:hover {
   transform: scale(1.1);
 }
 
+.buyBtn { 
+  background-color: rgba(0, 0, 0, 0);
+  color: #e0e0c9;
+  border:1px solid #e0e0c9;
+  padding: 7px 15px;
+  border-radius: 10%;
+  margin-bottom: 10px;
+}
+
 .main {
-  min-height: 100vh;
+  min-height: 80vh;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -67,6 +101,7 @@
   flex-direction: column;
   text-align: center;
   color: #162234;
+  margin-top: 2rem;
 }
 
 .nftStart{
@@ -92,31 +127,84 @@
   color: #e0e0c9; 
   margin: 1.8rem; 
   border-radius: 15%;
+  box-shadow: 0 10px 15px #162234;
+}
+
+
+@keyframes conveyor {
+  0%{
+    transform: translateX(0);
+    opacity: 0;
+  }
+  25%{
+    opacity: 1;
+  }
+  75%{
+    opacity: .75;
+  }
+  100%{
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  
 }
 
 .nft img{
   border-radius: 15%;
 }
 
-.payment{
-  z-index: 999;
-  background-color: white;
+.rotatingCarousel{
+  background: url('../assets/premiumdesign.png');
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.poly{
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 400px;
-  height: 400px;
-  border-radius: 10%;
-  position: sticky;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 960/540;
+  background: url('../assets/polygrid.svg');
+  background-size: cover;}
+.waves{
+  width: 100%;
+  aspect-ratio: 960/100;
+  background: url('../assets/waves2.svg');
+  background-size: cover;
+  transform: rotateX(180deg);
+  position: absolute;
+  bottom: -6rem;
+}
+
+.waves2{
+  width: 100%;
+  aspect-ratio: 960/100;
+  background: url('../assets/waves2.svg');
+  background-size: cover;
+  transform: rotateY(180deg);
+  position: absolute;
+  bottom: 10rem;
+}
+
+.ocean{
+  background: url('../assets/wavy1.svg');
+  aspect-ratio: 960/100;
+  background-size: cover;
+  animation-name: flows;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  animation-fill-mode: both;
 }
 
 .footer {
-  background-color: #E1A5A7;
+  background-color: #162234;
   display: flex;
-  flex: 1;
   padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid #eaeaea !important;
   justify-content: center;
   align-items: center;
 }
@@ -128,11 +216,19 @@
   flex-grow: 1;
 }
 
+.images{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
 
 @media (max-width: 600px) {
   .grid {
     width: 100%;
     flex-direction: column;
+  }
+  .ashMembers{
+    display: flex;
   }
   .ashAbout{
     font-size: 1.2rem;
@@ -145,6 +241,12 @@
   .leftCheckout{
     display: none;
   }
+}
+
+@media (max-width:400px) {
+  .benefits{
+    display: none;
+    }
 }
 
 @media (prefers-color-scheme: dark) {

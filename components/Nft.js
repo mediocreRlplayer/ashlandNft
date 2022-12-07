@@ -8,6 +8,8 @@ import design from '../assets/premiumdesign.png'
 import lessDesign from '../assets/lessDesign.png'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
+import picture from '../assets/premiumdesign.png'
+import { motion } from 'framer-motion'
 
 function Nft() {
   const [show, setShow] = useState(false)
@@ -86,6 +88,18 @@ function Nft() {
         : ""}
       <div>
         <p>Introducing</p>
+        <div className={styles.carouselContainer}>
+          {/* <div className={styles.rotatingCarousel}></div>
+          <div className={styles.rotatingCarousel}></div>
+          <div className={styles.rotatingCarousel}></div>
+          <div className={styles.rotatingCarousel}></div>
+          <div className={styles.rotatingCarousel}></div>
+          <div className={styles.rotatingCarousel}></div> */}
+          {/* <motion.div className={styles.rotatingCarousel} initial={{x:0}}  transistion={{duration: 10, repeat: 'infinity'}} animate={{
+            x: 100,
+          }}/> */}
+          {/* <Image src={picture} height={200} width={200} className={styles.rotatingCarousel}></Image> */}
+        </div>
         <p style={{ fontSize: '2.2rem' }}>Ashland Member Access</p>
       </div>
       <div className={styles.nftStart}>
@@ -99,7 +113,7 @@ function Nft() {
                 <Image src={design} width={250} height={250} />
                 <p>{item.title}</p>
                 <p>${item.price}</p>
-                <button onClick={() => setShow(true)}>Buy</button>
+                <button onClick={() => setShow(true)} className={styles.buyBtn}>Buy</button>
               </div>
             )
           })}
@@ -114,7 +128,7 @@ function Nft() {
                 <Image src={lessDesign} width={250} height={250} />
                 <p>{item.title}</p>
                 <p>${item.price}</p>
-                <button onClick={() => setShow(true)}>Buy</button>
+                <button onClick={() => setShow(true)} className={styles.buyBtn}>Buy</button>
               </div>
             )
           })}
