@@ -48,6 +48,9 @@ function CreditCard() {
             </button>
           </Modal.Footer>
         </Modal>
+        <div className={styles.mobileLink}>
+        <Link href={'/'} >Home</Link>
+        </div>
         {(user.user) ?
           <>
             <UserInput />
